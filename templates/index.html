@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Cadastro</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Cadastro de clientes</h1>
+    {% if tasks|length < 1 %}
+    <h4 style="text-align: center">Não há cadastros. Crie um abaixo!</h4>
+    {% else %}
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Endereco</th>
+            <th>Telefone</th>
+            <th>E-mail</th>
+            <th>Data</th>
+            <th>Ações</th>
+        </tr>
+        {% for task in tasks %}
+            <tr>
+                <td>{{ task.nome }}</td>
+                <td>{{ task.endereco }}</td>
+                <td>{{ task.telefone }}</td>
+                <td>{{ task.email }}</td>
+                <td>{{ task.date_created.date() }}</td>
+                <td>
+                    <a href="/delete/{{task.id}}">Delete</a>
+                    <br>
+                    <a href="/update/{{task.id}}">Atualizar</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+
+    <div class="form">
+        <form action="/" method="POST">
+            <label for="email">Nome:</label>
+            <input type="text" name="nome" id="nome">
+            <label for="email">Endereco:</label>
+            <input type="text" name="endereco" id="endereco">
+            <label for="email">Telefone:</label>
+            <input type="text" name="telefone" id="telefone">
+            <label for="email">E-mail:</label>
+            <input type="text" name="email" id="email">
+            <input type="submit" value="Cadastrar">
+        </form>
+    </div>
+</div>
+{% endblock %}

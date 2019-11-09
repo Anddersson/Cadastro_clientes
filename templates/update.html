@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Atualizar cliente</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Atualizar</h1>
+
+    <div class="form">
+        <form action="/update/{{task.id}}" method="POST">
+            <label for="email">Nome:</label>
+            <input type="text" name="nome" id="nome" value="{{task.nome}}">
+            <label for="email">Endereço:</label>
+            <input type="text" name="endereco" id="endereco" value="{{task.endereco}}">
+            <label for="email">Telefone:</label>
+            <input type="text" name="telefone" id="telefone" value="{{task.telefone}}">
+            <label for="email">E-mail:</label>
+            <input type="text" name="email" id="email" value="{{task.email}}">
+            <input type="submit" value="Atualizar">
+        </form>
+    </div>
+</div>
+{% endblock %}
