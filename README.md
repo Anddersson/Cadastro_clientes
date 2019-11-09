@@ -13,6 +13,9 @@
 #4 - Abrir o navegador e acessar o endereço "localhost:5000" ou "127.0.0.1:5000";
 
 
+
+
+
 #Deploy heroku
 
 #criar uma conta no www.Heroku.com;
@@ -21,7 +24,7 @@
 
 #1 - abrir o CMD na pasta Scripts e dar o comando activate para ativar o ambiente virtual - ex.: C:\Users\{{user}}\Cadastro_clientes\venv\Scripts>activate;
 
-#2 - Voltar a pasta Cadastro_clientes e digitar o comando "git init";
+#2 - Voltar a pasta Cadastro_clientes digita "heroku login" e depois digitar o comando "git init";
 
 #3 - digitar o comando "git add .";
 
